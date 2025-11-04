@@ -1,5 +1,9 @@
-// Loading Screen Animation
-window.addEventListener('load', function() {
+// Faster Loading Screen Animation
+window.addEventListener('DOMContentLoaded', function() {
+    // Reduce loading time for mobile
+    const isMobile = window.innerWidth <= 768;
+    const loadingTime = isMobile ? 1000 : 1500;
+    
     setTimeout(() => {
         const loadingScreen = document.getElementById('loadingScreen');
         const mainContent = document.getElementById('mainContent');
@@ -8,8 +12,8 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             loadingScreen.style.display = 'none';
             mainContent.classList.add('show');
-        }, 500);
-    }, 2000);
+        }, 300);
+    }, loadingTime);
 });
 
 // Smooth Scrolling Function

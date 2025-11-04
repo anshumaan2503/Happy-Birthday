@@ -962,4 +962,44 @@ Wish Jar Styles */
 
 .float2 {
     --rotation: 15deg;
+}/* Enha
+nced Mobile Performance */
+@media (max-width: 768px) {
+    /* Disable floating animations on mobile */
+    .memory-bubble {
+        animation: none;
+        position: static;
+        display: none; /* Hide floating bubbles on mobile for performance */
+    }
+    
+    .floating-memories {
+        display: none;
+    }
+    
+    /* Simplify background effects */
+    .timeline-section::before,
+    .memory-cards-section::after,
+    .love-letters-section::before {
+        display: none;
+    }
+    
+    /* Optimize memory floats */
+    .memory-float {
+        animation: none;
+        opacity: 0.3;
+    }
+    
+    /* Faster page transitions */
+    .page-nav {
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.98);
+    }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .memory-bubble,
+    .memory-float {
+        animation: none;
+    }
 }

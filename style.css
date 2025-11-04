@@ -120,8 +120,28 @@ body {
 .hero-content,
 .floating-hearts,
 .message-card {
-    will-change: transform;
+    will-change: auto;
     transform: translateZ(0);
+}
+
+/* Disable heavy animations on mobile for better performance */
+@media (max-width: 768px) {
+    .floating-hearts i {
+        animation: none;
+        opacity: 0.3;
+    }
+    
+    .sparkle-layer {
+        animation: none;
+    }
+    
+    .orb {
+        animation: none;
+    }
+    
+    .celebration-bg {
+        display: none;
+    }
 }
 
 .floating-hearts {
@@ -422,6 +442,23 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     border-radius: 15px;
     transition: transform 0.3s ease;
+}
+
+/* Mobile image optimization */
+@media (max-width: 768px) {
+    .photo-card img {
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    .photo-card:hover img {
+        transform: none; /* Disable hover effects on mobile */
+    }
+    
+    .photo-overlay {
+        transform: translateY(0); /* Always show overlay on mobile */
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    }
 }
 
 .photo-card:hover img {
@@ -1429,5 +1466,64 @@ body {
     50% { 
         opacity: 1;
         transform: translateX(-50%) scaleX(1);
+    }
+}/* Mo
+bile Performance Optimizations */
+@media (max-width: 768px) {
+    /* Reduce complex gradients on mobile */
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        animation: none;
+    }
+    
+    .love-message-section {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+    
+    .gallery-section {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+    
+    /* Simplify animations */
+    .main-title, .name-title, .hero-subtitle, .explore-btn {
+        animation: simpleFadeIn 0.8s ease both;
+    }
+    
+    /* Reduce shadow complexity */
+    .message-card, .photo-card, .wish-card {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Optimize photo gallery for mobile */
+    .photo-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    /* Faster loading for mobile */
+    .loading-screen {
+        background: linear-gradient(135deg, #ff6b6b, #54a0ff);
+    }
+}
+
+@keyframes simpleFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Preload critical images */
+.photo-card img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
