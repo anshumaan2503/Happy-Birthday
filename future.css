@@ -1,0 +1,743 @@
+/* Future Hero Section */
+.future-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.stars-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="20" cy="15" r="0.5" fill="rgba(255,255,255,0.2)"/><circle cx="15" cy="20" r="0.8" fill="rgba(255,255,255,0.4)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.floating-dreams {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.dream-bubble {
+    position: absolute;
+    font-size: 2rem;
+    animation: dreamFloat 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.bubble1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.bubble2 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 1.5s;
+}
+
+.bubble3 {
+    bottom: 40%;
+    left: 10%;
+    animation-delay: 3s;
+}
+
+.bubble4 {
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 4.5s;
+}
+
+@keyframes dreamFloat {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-30px) scale(1.2); }
+}
+
+/* Dreams Section */
+.dreams-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.dreams-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dreamPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.2)"/><circle cx="15" cy="15" r="0.8" fill="rgba(255,255,255,0.4)"/></pattern></defs><rect width="100" height="100" fill="url(%23dreamPattern)"/></svg>');
+    opacity: 0.5;
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-20px) translateY(-20px); }
+}
+
+.dreams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.dream-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 40px 30px 70px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.dream-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.2), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.dream-card:hover::before {
+    left: 100%;
+}
+
+.dream-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    background-size: 400% 400%;
+    border-radius: 27px;
+    z-index: -1;
+    opacity: 0;
+    animation: borderGlow 3s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+}
+
+.dream-card:hover::after {
+    opacity: 0.7;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.dream-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 35px 70px rgba(0,0,0,0.25),
+        0 15px 35px rgba(255, 107, 107, 0.3);
+}
+
+.dream-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: transform 0.3s ease;
+}
+
+.dream-card:hover .dream-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.dream-icon i {
+    color: white;
+    font-size: 2rem;
+}
+
+.dream-card h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dream-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Add space before button */
+}
+
+/* Bucket List Section */
+.bucket-list-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.bucket-list {
+    max-width: 800px;
+    margin: 50px auto 0;
+}
+
+.bucket-item {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.bucket-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.bucket-checkbox {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bucket-checkbox:hover {
+    transform: scale(1.1);
+}
+
+.bucket-checkbox i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.bucket-content h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.bucket-content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Promise Section */
+.promise-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.promise-card {
+    background: white;
+    border-radius: 25px;
+    padding: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.promise-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+    animation: promiseGlow 4s ease-in-out infinite;
+}
+
+@keyframes promiseGlow {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.promise-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.promise-header i {
+    font-size: 3rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.promise-header h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.promise-content {
+    position: relative;
+    z-index: 2;
+}
+
+.promise-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.promise-signature {
+    text-align: right;
+}
+
+.promise-signature p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Final Celebration Section */
+.final-celebration {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    text-align: center;
+}
+
+.celebration-content {
+    color: white;
+}
+
+.celebration-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.celebration-content p {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Birthday Cake Animation */
+.birthday-animation {
+    margin: 50px 0;
+}
+
+.cake-container {
+    display: inline-block;
+    position: relative;
+}
+
+.cake {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.cake-layer {
+    position: absolute;
+    border-radius: 10px;
+}
+
+.layer1 {
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+}
+
+.layer2 {
+    bottom: 35px;
+    left: 10px;
+    width: 100px;
+    height: 35px;
+    background: linear-gradient(45deg, #FF69B4, #FF1493);
+}
+
+.layer3 {
+    bottom: 65px;
+    left: 20px;
+    width: 80px;
+    height: 30px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+}
+
+.candle {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #FFFF00;
+    border-radius: 2px;
+    top: -20px;
+}
+
+.candle1 { left: 35px; }
+.candle2 { left: 58px; }
+.candle3 { left: 81px; }
+
+.flame {
+    position: absolute;
+    top: -8px;
+    left: -2px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #FFA500 0%, #FF4500 70%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: rotate(-2deg) scale(1); }
+    100% { transform: rotate(2deg) scale(1.1); }
+}
+
+.final-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.final-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.final-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.final-btn i {
+    margin-right: 10px;
+}
+
+/* Wish Modal */
+.wish-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.wish-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wish-content {
+    background: white;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.5s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.wish-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.wish-content p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.blow-candles-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.blow-candles-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+.blow-candles-btn i {
+    margin-right: 10px;
+}
+
+/* Candles Blown Out Effect */
+.candles-out .flame {
+    animation: blowOut 0.8s ease-out forwards;
+}
+
+@keyframes blowOut {
+    0% { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+    50% { 
+        opacity: 0.5; 
+        transform: scale(1.2) translateY(-5px); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(0) translateY(-10px); 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dreams-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bucket-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bucket-checkbox {
+        margin: 0 auto 15px;
+    }
+    
+    .promise-card {
+        padding: 30px 20px;
+    }
+    
+    .final-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wish-content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .celebration-content h2 {
+        font-size: 2.5rem;
+    }
+}/
+* Challenge Cards */
+.challenge-card {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding-bottom: 60px; /* Add extra space for button */
+}
+
+.challenge-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.challenge-status {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.challenge-card.accepted .challenge-status {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+}
+
+/* Countdown/Reasons Grid */
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.reason-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+}
+
+.reason-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.reason-card:hover::before {
+    left: 100%;
+}
+
+.reason-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.reason-content h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.reason-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Challenge Confetti Animation */
+@keyframes challengeConfetti {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) rotate(720deg);
+    }
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .countdown-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reason-card {
+        padding: 25px 20px;
+    }
+    
+    .challenge-status {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}

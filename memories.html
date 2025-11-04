@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Beautiful Memories - Rahul & Ishika</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="memories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="page-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart"></i>
+                <span>R & I</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="memories.html" class="active">About You</a>
+                <a href="future.html">New Adventures</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="memories-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="page-title">Things I Love About You</h1>
+            <p class="page-subtitle">What makes Rahul absolutely amazing ✨</p>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-icon icon1">🎯</div>
+            <div class="floating-icon icon2">⚡</div>
+            <div class="floating-icon icon3">🌟</div>
+        </div>
+        <div class="floating-memories">
+            <div class="memory-bubble bubble1">
+                <img src="IMG-20251104-WA0003.jpg" alt="Memory 1">
+            </div>
+            <div class="memory-bubble bubble2">
+                <img src="IMG-20251104-WA0005.jpg" alt="Memory 2">
+            </div>
+            <div class="memory-bubble bubble3">
+                <img src="IMG-20251104-WA0008.jpg" alt="Memory 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Superpowers Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Your Amazing Superpowers</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Creative Soul</h3>
+                        <p class="timeline-date">Artistic Genius</p>
+                        <p>Your creativity knows no bounds! Whether it's music, art, or just the way you see the world, you bring beauty to everything you touch!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>People Magnet</h3>
+                        <p class="timeline-date">Natural Leader</p>
+                        <p>You have this amazing ability to connect with people instantly. Everyone feels comfortable around you and drawn to your positive energy!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-heart-hands"></i>
+                        </div>
+                        <h3>Kindness Expert</h3>
+                        <p class="timeline-date">Pure Heart</p>
+                        <p>Your kindness and empathy towards everyone around you is truly inspiring. You make the world a better place just by being you!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Achievement Unlocked</h3>
+                        <p class="timeline-date">Another Year Wiser</p>
+                        <p>Today you level up! Another year of being absolutely amazing, and I can't wait to see what incredible things you'll accomplish this year!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Wish Jar Section -->
+    <section class="memory-cards-section">
+        <div class="container">
+            <h2 class="section-title">Birthday Wish Jar</h2>
+            <p class="section-subtitle">Click on each jar to reveal a special birthday wish! 🎁</p>
+            <div class="memory-grid wish-jar-grid">
+                <div class="wish-jar" onclick="openWish(this, 1)">
+                    <div class="jar-container">
+                        <div class="jar-lid">🎀</div>
+                        <div class="jar-body">
+                            <div class="jar-content">
+                                <span class="jar-number">1</span>
+                                <div class="sparkles">✨</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wish-content hidden">
+                        <h4>Career Breakthrough</h4>
+                        <p>May this year bring you that amazing opportunity you've been working towards - the promotion, project, or position that showcases your incredible talents!</p>
+                    </div>
+                </div>
+                
+                <div class="wish-jar" onclick="openWish(this, 2)">
+                    <div class="jar-container">
+                        <div class="jar-lid">🎀</div>
+                        <div class="jar-body">
+                            <div class="jar-content">
+                                <span class="jar-number">2</span>
+                                <div class="sparkles">✨</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wish-content hidden">
+                        <h4>Network of Champions</h4>
+                        <p>I wish you connect with mentors and colleagues who recognize your potential and open doors to exciting new possibilities in your career journey!</p>
+                    </div>
+                </div>
+                
+                <div class="wish-jar" onclick="openWish(this, 3)">
+                    <div class="jar-container">
+                        <div class="jar-lid">🎀</div>
+                        <div class="jar-body">
+                            <div class="jar-content">
+                                <span class="jar-number">3</span>
+                                <div class="sparkles">✨</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wish-content hidden">
+                        <h4>Skills That Shine</h4>
+                        <p>May you master that new skill or technology you've been eyeing, and may it become the key that unlocks your next big career milestone!</p>
+                    </div>
+                </div>
+                
+                <div class="wish-jar" onclick="openWish(this, 4)">
+                    <div class="jar-container">
+                        <div class="jar-lid">🎀</div>
+                        <div class="jar-body">
+                            <div class="jar-content">
+                                <span class="jar-number">4</span>
+                                <div class="sparkles">✨</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wish-content hidden">
+                        <h4>Work-Life Balance Magic</h4>
+                        <p>I wish you find that perfect balance where your career flourishes AND you have time for all the things that make you happy. You deserve both success and joy!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Trivia Section -->
+    <section class="love-letters-section">
+        <div class="container">
+            <h2 class="section-title">Fun Facts About the Birthday Star</h2>
+            <div class="letters-container trivia-container">
+                <div class="trivia-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="trivia-header">
+                                <i class="fas fa-question-circle"></i>
+                                <h4>Rahul's Superpower</h4>
+                            </div>
+                            <p>Click to reveal!</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="trivia-content">
+                                <p>Making everyone around him smile without even trying! Your positive energy is contagious and lights up every room you enter.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trivia-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="trivia-header">
+                                <i class="fas fa-star"></i>
+                                <h4>Hidden Talent</h4>
+                            </div>
+                            <p>Click to discover!</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="trivia-content">
+                                <p>You have this amazing ability to remember the smallest details about people and make them feel special. It's like you have a supercomputer for caring!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trivia-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="trivia-header">
+                                <i class="fas fa-heart"></i>
+                                <h4>What Makes You Special</h4>
+                            </div>
+                            <p>Click to see!</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="trivia-content">
+                                <p>Your genuine kindness and the way you always put others first. You have the biggest heart and the most beautiful soul!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue Journey Section -->
+    <section class="continue-section">
+        <div class="container">
+            <div class="continue-content">
+                <h3>Ready for More Magic?</h3>
+                <p>Let's discover your exciting new adventures...</p>
+                <button class="continue-btn" onclick="goToFuture()">
+                    <i class="fas fa-rocket"></i>
+                    Start New Adventures
+                </button>
+            </div>
+        </div>
+        <div class="continue-memories">
+            <div class="memory-float float1">
+                <img src="IMG-20251104-WA0004.jpg" alt="Adventure Memory">
+            </div>
+            <div class="memory-float float2">
+                <img src="IMG-20251104-WA0010.jpg" alt="Future Memory">
+            </div>
+        </div>
+    </section>
+
+    <script src="memories.js"></script>
+</body>
+</html>

@@ -1,0 +1,965 @@
+/* Navigation Styles */
+.page-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff6b6b;
+}
+
+.nav-logo i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff6b6b;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6b6b;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Memories Hero Section */
+.memories-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><text x="10" y="15" text-anchor="middle" fill="rgba(255,255,255,0.1)" font-size="12">♥</text></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    z-index: 2;
+    color: white;
+}
+
+.page-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-photo {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    animation: floatPhoto 8s ease-in-out infinite;
+}
+
+.photo1 {
+    background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=100&h=100&fit=crop');
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.photo2 {
+    background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=100&h=100&fit=crop');
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.photo3 {
+    background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop');
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes floatPhoto {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #ff6b6b;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #ff6b6b;
+    border: 4px solid #fff;
+    top: 30px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.timeline-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.timeline-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.timeline-date {
+    color: #ff6b6b;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Memory Cards Section */
+.memory-cards-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.memory-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+}
+
+.memory-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.memory-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover .memory-image img {
+    transform: scale(1.1);
+}
+
+.memory-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 107, 107, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.memory-card:hover .memory-overlay {
+    opacity: 1;
+}
+
+.memory-overlay i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.memory-content {
+    padding: 25px;
+}
+
+.memory-content h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.memory-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Love Letters Section */
+.love-letters-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.letters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.letter-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.letter-card:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.letter-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.letter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.letter-header i {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-right: 15px;
+}
+
+.letter-header h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.letter-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Continue Section */
+.continue-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    text-align: center;
+}
+
+.continue-content {
+    color: white;
+}
+
+.continue-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.continue-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.continue-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.continue-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.continue-btn i {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .timeline::after {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+    
+    .timeline-item::after {
+        left: 10px;
+    }
+    
+    .timeline-item.right {
+        left: 0;
+    }
+    
+    .timeline-item.right::after {
+        left: 10px;
+    }
+    
+    .letters-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .letter-card {
+        transform: rotate(0deg);
+    }
+    
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+}/* 
+Wish Jar Styles */
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.wish-jar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.wish-jar {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.wish-jar:hover {
+    transform: translateY(-5px);
+}
+
+.jar-container {
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.jar-lid {
+    font-size: 2rem;
+    margin-bottom: -10px;
+    z-index: 2;
+    position: relative;
+}
+
+.jar-body {
+    width: 120px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+    border: 3px solid #ddd;
+    border-radius: 15px 15px 25px 25px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.jar-content {
+    text-align: center;
+}
+
+.jar-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sparkles {
+    font-size: 1.5rem;
+    animation: sparkleJar 2s ease-in-out infinite;
+}
+
+@keyframes sparkleJar {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.wish-content {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.wish-content.hidden {
+    display: none;
+}
+
+.wish-content h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.wish-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@keyframes wishReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sparkleWish {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(1.5);
+    }
+}
+
+/* Trivia Card Styles */
+.trivia-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.trivia-card {
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.trivia-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.card-back {
+    background: white;
+    color: #333;
+    transform: rotateY(180deg);
+}
+
+.trivia-header {
+    margin-bottom: 20px;
+}
+
+.trivia-header i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.trivia-header h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.card-front p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.trivia-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Floating Icons */
+.floating-icon {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatIcon 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.icon1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.icon2 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.icon3 {
+    bottom: 30%;
+    left: 10%;
+    animation-delay: 4s;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes sparkleWish {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(1.5);
+    }
+}
+/*
+ Floating Memory Bubbles */
+.floating-memories {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.memory-bubble {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    animation: floatMemory 8s ease-in-out infinite;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.memory-bubble:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.memory-bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bubble1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.bubble2 {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+    animation-duration: 8s;
+}
+
+.bubble3 {
+    bottom: 25%;
+    left: 20%;
+    animation-delay: 4s;
+    animation-duration: 7s;
+}
+
+@keyframes floatMemory {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-15px) rotate(5deg) scale(1.05);
+    }
+    50% {
+        transform: translateY(-25px) rotate(-3deg) scale(0.95);
+    }
+    75% {
+        transform: translateY(-10px) rotate(2deg) scale(1.02);
+    }
+}
+
+/* Background Image Effects */
+.timeline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background-image: url('IMG-20251104-WA0007.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    border-radius: 50%;
+    z-index: 0;
+    animation: gentleRotate 20s linear infinite;
+}
+
+.timeline-section {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gentleRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Memory Cards Background Effects */
+.memory-cards-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background-image: url('IMG-20251104-WA0009.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.memory-cards-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Love Letters Section Background */
+.love-letters-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 120px;
+    height: 120px;
+    background-image: url('IMG-20251104-WA0011.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    border-radius: 15px;
+    transform: translateY(-50%) rotate(15deg);
+    z-index: 0;
+}
+
+.love-letters-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .memory-bubble {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .timeline-section::before,
+    .memory-cards-section::after,
+    .love-letters-section::before {
+        width: 100px;
+        height: 100px;
+    }
+}/*
+ Continue Section Memory Floats */
+.continue-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.continue-memories {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.memory-float {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: memoryFloat 10s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.memory-float img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.float1 {
+    top: 20%;
+    left: 8%;
+    animation-delay: 0s;
+    transform: rotate(-10deg);
+}
+
+.float2 {
+    bottom: 30%;
+    right: 10%;
+    animation-delay: 3s;
+    transform: rotate(15deg);
+}
+
+@keyframes memoryFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(var(--rotation, 0deg)) scale(1);
+    }
+    33% {
+        transform: translateY(-20px) rotate(calc(var(--rotation, 0deg) + 5deg)) scale(1.05);
+    }
+    66% {
+        transform: translateY(-10px) rotate(calc(var(--rotation, 0deg) - 3deg)) scale(0.98);
+    }
+}
+
+.float1 {
+    --rotation: -10deg;
+}
+
+.float2 {
+    --rotation: 15deg;
+}
